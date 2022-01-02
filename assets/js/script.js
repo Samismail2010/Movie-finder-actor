@@ -23,7 +23,7 @@ async function getActorId() {
 	})
 	.then(function(response){
 		response.json().then(function(data) {
-		console.log(data.results);
+		console.log("this is data.results in first fetch: " + data.results);
 		console.log("This should be Pacinos id: " + data.results[0].imdb_id);
 		var actorId = data.results[0].imdb_id;
 		getMovies(actorId);
@@ -46,8 +46,8 @@ async function getMovies (actorId) {
 	})
 	.then(response => {
 		response.json().then(function(data) {
-			console.log("This is the data results of the 2nd fetch" + data.results);
-			// console.log("This should be Pacinos id: " + data.results[0].imdb_id);
+			console.log("This is the data results of the 2nd fetch" + data);
+			console.log("This should be the title of the first movie: " + data.results[0][0].title);
 		});
 	})
 	.catch(err => {
