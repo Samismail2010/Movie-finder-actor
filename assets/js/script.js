@@ -1,18 +1,13 @@
 var imdbButtonEl = document.querySelector("#getActorId");
-var movieSearchButtonEl = document.querySelector("getVenue");
-
-
-
-console.log ("This should just be an html element imdbid button: " + imdbButtonEl);
-console.log ("This should just be an html element movieSearchid button: " + movieSearchButtonEl);
-
+var venueButtonEl = document.querySelector("#getVenue");
+var movieListEl = document.querySelector("#movieList");
 
 
 async function getActorId() {
 	// Get the first actor's id by last name that was entered into the last name search bar
 	
 	//hard coded last name needs to be removed
-	var actorLastName = "Pitt"
+	var actorLastName = "Wayne"
 
 	await fetch("https://data-imdb1.p.rapidapi.com/actor/imdb_id_byName/"+ actorLastName + "/", {
 		"method": "GET",
@@ -47,11 +42,18 @@ async function getMovies (actorId) {
 	.then(response => {
 		response.json().then(function(data) {
 			console.log("This is the length of data.results: " + data.results.length);
-			for (var i = 0; i < 1; i++) { //data.results.length; i++) {
+			for (var i = 0; i < data.results.length; i++) {
 			console.log ("This is each movie listed: " + data.results[i][0].title);
-			var movieTitle = data.results[i][0].title //*** THIS IS JUST PLACEHOLDER TO TEST WITH.  REAL CODE Should display each on screen as clickable text. */
+			var movieTitle = data.results[i][0].title
 				
-			getMovieVenue(movieTitle);
+			// display each movie  ***THESE WILL NEED TO BE CHANGED INTO LINKS TO FIND UTELLY API with getMovieVenue(movieTitle) ***
+			var movieEl = document.createElement("li");
+			movieEl.textContent = movieTitle;
+			movieListEl.appendChild(movieEl);
+
+			
+			
+			// getMovieVenue(movieTitle);  THIS WAS USED FOR TESTING.  THIS CALL NEEDS TO BE REPLACED WITH CALL BASED ON WHICH MOVIE IS CLICKED.
 			}
 			console.log("This should be the title of the first movie: " + data.results[0][0].title);
 		});
@@ -90,4 +92,5 @@ async function getMovieVenue (movieTitle) {
 
 // add event listeners to form and button container
 imdbButtonEl.addEventListener("click", getActorId);
-//movieSearchButtonEl.addEventListener("click", getVenue);
+venueButtonEl.addEventListener("click", getMovieVenue);
+
