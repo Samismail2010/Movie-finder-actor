@@ -7,7 +7,7 @@ async function getActorId() {
 	// Get the first actor's id by last name that was entered into the last name search bar
 	
 	//THE CODE BELOW NEEDS TO BE REPLACED WITH A VARIABLE FROM SEARCH BAR.  TEXT FROM SEARCH BAR SHOULD BE SAVED TO actorsLastName on click.
-	var actorLastName = "Wayne"
+	var actorLastName = "Pacino"
 
 	await fetch("https://data-imdb1.p.rapidapi.com/actor/imdb_id_byName/"+ actorLastName + "/", {
 		"method": "GET",
@@ -42,7 +42,7 @@ async function getMovies (actorId) {
 	.then(response => {
 		response.json().then(function(data) {
 			// console.log("This is the length of data.results: " + data.results.length);
-			for (var i = 0; i < data.results.length; i++) {
+			for (var i = 0; i < 1; i++) { // Hard-code 1, bracket and comment slashes need to be removed once movies are clickable < data.results.length; i++) {
 				console.log ("This is each movie listed: " + data.results[i][0].title);
 				var movieTitle = data.results[i][0].title
 				
@@ -50,7 +50,7 @@ async function getMovies (actorId) {
 				var movieEl = document.createElement("li");
 				movieEl.textContent = movieTitle;
 				movieListEl.appendChild(movieEl);
-			// getMovieVenue(movieTitle);  THIS WAS USED FOR TESTING.  THIS CALL NEEDS TO BE REPLACED WITH CALL BASED ON WHICH MOVIE IS CLICKED.
+				getMovieVenue(movieTitle);  // THIS WAS USED FOR TESTING.  THIS CALL NEEDS TO BE REPLACED WITH CALL BASED ON WHICH MOVIE IS CLICKED.
 			}
 			console.log("This should be the title of the first movie: " + data.results[0][0].title);
 		});
