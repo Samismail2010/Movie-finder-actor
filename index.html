@@ -1,24 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Test for the Movie-Actor-Finder Project</title>
-</head>
-<body>
-    <h1>Two Simple Buttons to test API functionality </h1>
-    <br><br><br>
-    <button class = "actor" id = "getActorId">API to Data-IMDB to get movies for actor entered</button>
-    <button class = "venue" id = "getVenue">API to Utelly Click to find all US venues of first movie in list</button>
-    <ol class = "movieList" id = "movieList">Movie List (these need to be formatted on right and made clickable) </ol>
-
-
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/images/">
+  </head>
+  <body>
+    <!--navbar-->
     
-
-
-
-    <script src="./assets/js/script.js"></script>
-</body>
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <img src="assets/images/Screen Shot 2022-01-03 at 12.10.35 AM.png" width="215px" bottom="55">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+    
+          <a class="navbar-item">
+            Documentation
+          </a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              
+            </div>
+          </div>
+        </div>
+    
+        
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-fullheight-with-navbar">
+      <div class="hero-body container">
+        <div class="">
+          <p class="title has-text-white">
+            Movie Actor Finder
+          </p>
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" placeholder="Search by Movie or Actor">
+            </div>
+            <div class="control">
+              <a class="button is-info">
+                Search
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  <script src="./assets/js/script.js"></script>
+  </body>
 </html>
