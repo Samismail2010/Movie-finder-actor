@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Movie Actor Venue Finder!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/images/">
@@ -61,17 +61,19 @@
           </p>
           <div class="field has-addons">
             <div class="control">
-              <input class="input" type="text" placeholder="Search by Movie or Actor">
+              <input class="input" type="text" id="actorName" placeholder="Search by Movie or Actor">
             </div>
             <div class="control">
-              <a class="button is-info">
+              <a class="button is-info" id = "getActorId">
                 Search
               </a>
             </div>
           </div>
         </div>
       </div>
+      <div id="movieList"></div>
     </section>
+    
   
   <script src="./assets/js/script.js"></script>
   </body>
