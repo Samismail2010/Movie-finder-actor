@@ -1,6 +1,6 @@
 # movie-actor-finder
 
-Deployed URL:
+Deployed URL:https://taylorh07.github.io/movie-actor-finder/
 GitHub repository URL:  https://github.com/TaylorH07/movie-actor-finder
 
 Team members:  Taylor, Sam, Joey and Brad
